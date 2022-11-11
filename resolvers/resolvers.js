@@ -1,6 +1,6 @@
 
-const {getAllWorkers} = require('./workers');
-const {getAllDepartament} = require('./departament');
+const {getAllWorkers, postWorker, deleteFromWorker, upgradeWorker} = require('./workers');
+const {getAllDepartament, postDepartament, deleteFromDepartament, upgradeDepartament} = require('./departament');
 const {getAllPositions, postPosition, deleteFromPosition, upgradePosition} = require('./positions');
 
 
@@ -27,10 +27,38 @@ const resolvers = {
       const {
         positionInput
       } = args;
-      console.log(positionInput);
       return upgradePosition(positionInput);
+    },
+    createDepartament: (args) => {
+      const {
+        departamentInput
+      } = args;
+      return postDepartament(departamentInput);
+    },
+    deleteDepartament: (args) => {
+      return deleteFromDepartament(args);
+    },
+    updateDepartament: (args) => {
+      const {
+        departamentInput
+      } = args;
+      return upgradeDepartament(departamentInput);
+    },
+    createWorker: (args) => {
+      const {
+        workerInput
+      } = args;
+      return postWorker(workerInput);
+    },
+    deleteWorker: (args) => {
+      return deleteFromWorker(args);
+    }, 
+    updateWorker: (args) => {
+      const {
+        workerInput
+      } = args;
+      return upgradeWorker(workerInput);
     }
-
 };
 
 module.exports = resolvers;
