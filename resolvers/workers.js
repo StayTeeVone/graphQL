@@ -52,7 +52,7 @@ async function deleteFromWorker(args){
 
   try{
     const result = await query(sql);
-    return `Worker with id ${id_workers} was deleted.`;
+    return `Worker with id ${id_workers} was deleted!`;
   } catch(err){
     console.log(err);
     throw err;
