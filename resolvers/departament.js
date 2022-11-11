@@ -52,7 +52,7 @@ async function deleteFromDepartament(args){
 
   try{
     const result = await query(sql);
-    return `Departament with id ${id_departament} was deleted.`;
+    return `Departament with id ${id_departament} was deleted!`;
   } catch(err){
     console.log(err);
     throw err;
